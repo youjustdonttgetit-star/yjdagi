@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white antialiased;
+    font-family: "Playfair Display", "Didot", "Bodoni MT", serif;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    background-image: url("/vanity-mobile.jpg") !important;
+  }
+}
