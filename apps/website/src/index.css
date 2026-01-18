@@ -1,19 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  margin: 0;
+  font-family: "serif";
+  color: white;
+  background: url("/vanity-desktop.jpg") center / cover fixed no-repeat;
+}
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
+@media (max-width: 768px) {
   body {
-    @apply bg-black text-white antialiased;
-    font-family: "Playfair Display", "Didot", "Bodoni MT", serif;
+    background-image: url("/vanity-mobile.jpg");
   }
 }
-@media (max-width: 768px) {
-  section {
-    background-image: url("/vanity-mobile.jpg") !important;
-  }
+
+.page {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.subtitle {
+  opacity: 0.6;
+  margin-bottom: 3rem;
+}
+
+.grid-2,
+.grid-3 {
+  display: grid;
+  gap: 3rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card,
+.product-card {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  padding: 3rem;
+  border-radius: 24px;
+}
+
+.product-img {
+  height: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.btn.outline {
+  opacity: 0.6;
+}
+
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: black;
+  padding: 3rem;
+  border-radius: 24px;
+  width: min(90%, 420px);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
 }
